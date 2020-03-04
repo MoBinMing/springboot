@@ -13,7 +13,7 @@
 
 3、填写项目名称，java版本，其他描述信息→Next     
 
-![创建SpringBoot03](assets/创建SpringBoot03.png)
+![创建SpringBoot03](/assets/创建SpringBoot03.png)
 
 4、选择web依赖→Next   
 
