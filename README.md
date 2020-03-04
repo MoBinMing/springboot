@@ -1,5 +1,5 @@
 # idea SpringBoot实例
-#使用SpringInitializr创建SpringBoot项目
+使用SpringInitializr创建SpringBoot项目
 ****
 ## 目录
 * [使用SpringInitializr创建SpringBoot项目](#使用SpringInitializr创建SpringBoot项目) 
