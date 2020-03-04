@@ -7,7 +7,7 @@
 ------
 1、File→New→Project 
 
-![创建SpringBoot01](assets\创建SpringBoot01.png)
+![创建SpringBoot01](\assets\创建SpringBoot01.png)
 
 2、选择Spring Initializr，选择JDK版本→Next  ![创建SpringBoot02](assets/创建SpringBoot02.png)
 
