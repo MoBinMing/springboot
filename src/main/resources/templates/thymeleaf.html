@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!--Thymeleaf联想-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>使用Thymeleaf模板</title>
+</head>
+<body >
+<span th:text="${text}"></span>
+<span th:utext="${utext}"></span>
+<span >[[${v}]]</span>
+<span >[(${v})]</span>
+
+<h3 th:text="each循环" th:each="user:${users}"></h3>
+<br>
+<h4  th:each="user:${users}">[[${user}]]</h4>
+<br>
+</body>
+</html>

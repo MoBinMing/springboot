@@ -16,6 +16,9 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <!--设置thymeleaf版本-->
+        <thymeleaf.version>3.0.11.RELEASE</thymeleaf.version>
+        <thymeleaf.layout.dialect.version>2.4.1</thymeleaf.layout.dialect.version>
     </properties>
 
     <dependencies>
@@ -34,6 +37,11 @@
                     <artifactId>junit-vintage-engine</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <!-- html模板引擎：thymeleaf -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
     </dependencies>
 
