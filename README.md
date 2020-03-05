@@ -1,5 +1,5 @@
 # idea SpringBoot实例
-spring主分支
+使用Thymeleaf模板
 ****
 ## 目录
 * [使用SpringInitializr创建SpringBoot项目](#使用SpringInitializr创建SpringBoot项目)
