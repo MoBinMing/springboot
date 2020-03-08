@@ -125,8 +125,7 @@ public class CodeGenerator {
         StrategyConfig strategy = new StrategyConfig();
         strategy.setNaming(NamingStrategy.underline_to_camel);
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
-
-        // strategy.setSuperEntityClass("com.baomidou.mybatisplus.extension.activerecord.Model");
+        //strategy.setSuperEntityClass("com.baomidou.mybatisplus.extension.activerecord.Model");
         strategy.setEntityLombokModel(true);
         strategy.setRestControllerStyle(true);
         // 公共父类

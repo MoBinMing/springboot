@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.mobinming.springboot.dao")
+@MapperScan("com.mobinming.springboot.mapper")
 public class SpringbootApplication {
 
     public static void main(String[] args) {
