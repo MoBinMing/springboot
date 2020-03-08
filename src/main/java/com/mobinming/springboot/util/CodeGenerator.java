@@ -1,4 +1,4 @@
-package com.mobinming.springboot.mybatis;
+package com.mobinming.springboot.util;
 
 import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
@@ -8,6 +8,7 @@ import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.InjectionConfig;
 import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.po.TableInfo;
+import com.baomidou.mybatisplus.generator.config.rules.DateType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 
@@ -23,7 +24,6 @@ import java.util.Scanner;
  */
 // 演示例子，执行 main 方法控制台输入模块表名回车自动生成对应项目目录中
 public class CodeGenerator {
-
     /**
      * <p>
      * 读取控制台内容
@@ -50,10 +50,23 @@ public class CodeGenerator {
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
         String projectPath = System.getProperty("user.dir");
-        gc.setOutputDir(projectPath + "/src/main/java");
+        gc.setOutputDir(projectPath + "/src/main/java");//生成文件的输出目录
         gc.setAuthor("Kirin");
-        gc.setOpen(false);
-        // gc.setSwagger2(true); 实体属性 Swagger2 注解
+        gc.setOpen(false);//是否打开输出目录
+        gc.setFileOverride(true);// 是否覆盖文件
+        gc.setActiveRecord(true);// 开启 activeRecord 模式
+        gc.setEnableCache(false);// 是否在xml中添加二级缓存配置
+        gc.setBaseResultMap(true);// XML ResultMap
+        gc.setBaseColumnList(true);// XML columList
+        gc.setKotlin(false);//开启 Kotlin 模式
+        // 自定义文件命名，注意 %s 会自动填充表实体属性！
+        //gc.setEntityName("%sEntity");
+        //gc.setMapperName("%sDao");
+        //gc.setXmlName("%sDao");
+        //gc.setServiceName("MP%sService");
+        //gc.setServiceImplName("%sServiceDiy");
+        //gc.setControllerName("%sAction");
+        //gc.setSwagger2(true); 实体属性 Swagger2 注解
         mpg.setGlobalConfig(gc);
 
         // 数据源配置

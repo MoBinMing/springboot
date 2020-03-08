@@ -1,9 +1,8 @@
 package com.mobinming.springboot.entity;
 
+import com.baomidou.mybatisplus.extension.activerecord.Model;
 import java.time.LocalDateTime;
 import java.io.Serializable;
-
-import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -14,12 +13,12 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author Kirin
- * @since 2020-03-08
+ * @since 2020-03-09
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-public class Users extends Model<Users> implements Serializable {
+public class Users extends Model<Users> {
 
     private static final long serialVersionUID = 1L;
 
@@ -29,11 +28,10 @@ public class Users extends Model<Users> implements Serializable {
 
     private LocalDateTime date;
 
-    /**
-     * @return 返回当前表的主键
-     */
+
     @Override
     protected Serializable pkVal() {
-        return id;
+        return this.id;
     }
+
 }

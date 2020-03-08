@@ -21,3 +21,4 @@ spring:
     password: 123456
     url: jdbc:mysql://localhost:3306/springboot-demo-db?useUnicode=true&characterEncoding=UTF-8
     driver-class-name: com.mysql.jdbc.Driver #直接打mysql会有提示
+    type: com.alibaba.druid.pool.DruidDataSource

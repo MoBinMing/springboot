@@ -3,7 +3,7 @@ package com.mobinming.springboot.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
 
 /**
  * <p>
@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
  * </p>
  *
  * @author Kirin
- * @since 2020-03-08
+ * @since 2020-03-09
  */
-@RestController
+@Controller
 @RequestMapping("//users")
 public class UsersController {
 
