@@ -105,3 +105,29 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver #直接打mysql会有提示
     type: com.alibaba.druid.pool.DruidDataSource
 ```
+
+
+#### 3、SpringbootApplication启动类添加注释
+
+```java
+@SpringBootApplication
+@MapperScan("com.mobinming.springboot.mapper")//扫描mapper
+public class SpringbootApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(SpringbootApplication.class, args);
+    }
+
+}
+```
+
+#### 4、使用工具类生成代码（选其一）
+
+##### 工具类一：MysqlGenerator.java
+```java
+
+```
+##### 工具类二：CodeGenerator.java
+```java
+
+```
