@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * @Description: 代码生成器
+ * @Description: 代码生成器（可选模块）
  * @Author: jinhaoxun
  * @Date: 2020/2/13 上午10:06
  * @Version: 1.0.0
@@ -80,9 +80,9 @@ public class CodeGenerator {
 
         // 包配置
         PackageConfig pc = new PackageConfig();
-        //pc.setModuleName(scanner("模块名"));
-        pc.setModuleName("");
-        pc.setParent("com.mobinming.springboot");
+        pc.setModuleName(scanner("模块名"));
+        //pc.setModuleName("");
+        pc.setParent("com.mobinming");
         mpg.setPackageInfo(pc);
 
         // 自定义配置
@@ -145,7 +145,11 @@ public class CodeGenerator {
         // strategy.setSuperControllerClass("你自己的父类控制器,没有就不用设置!");
         // 写于父类中的公共字段
         // strategy.setSuperEntityColumns("id");
-        strategy.setInclude(scanner("表名，多个英文逗号分割").split(","));
+        String tables=scanner("\n生成全部表：1\n生成指定表：多个表名英文逗号分割");
+        if (!tables.equals("1")){
+            strategy.setInclude(tables.split(","));
+        }
+
         strategy.setControllerMappingHyphenStyle(true);
         strategy.setTablePrefix(pc.getModuleName() + "_");
         mpg.setStrategy(strategy);

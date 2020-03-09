@@ -6,10 +6,8 @@ import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.InjectionConfig;
 import com.baomidou.mybatisplus.generator.config.*;
-import com.baomidou.mybatisplus.generator.config.converts.MySqlTypeConvert;
 import com.baomidou.mybatisplus.generator.config.po.TableFill;
 import com.baomidou.mybatisplus.generator.config.po.TableInfo;
-import com.baomidou.mybatisplus.generator.config.rules.DbColumnType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 
@@ -23,8 +21,31 @@ import java.util.*;
  * @author hubin
  * @since 2016-12-01
  */
-public class MysqlGenerator extends GeneratorTest {
-
+public class MysqlGenerator {
+    /**
+     * <p>
+     * 读取控制台内容
+     * </p>
+     */
+    public static int scanner() {
+        Scanner scanner = new Scanner(System.in);
+        StringBuilder help = new StringBuilder();
+        help.append(" ！！代码生成, 输入 0 表示使用 Velocity 引擎 ！！");
+        help.append("\n对照表：");
+        help.append("\n0 = Velocity 引擎");
+        help.append("\n1 = Freemarker 引擎");
+        help.append("\n请输入：");
+        System.out.println(help.toString());
+        int slt = 0;
+        // 现在有输入数据
+        if (scanner.hasNext()) {
+            String ipt = scanner.next();
+            if ("1".equals(ipt)) {
+                slt = 1;
+            }
+        }
+        return slt;
+    }
     /**
      * <p>
      * MySQL 生成演示
@@ -113,8 +134,8 @@ public class MysqlGenerator extends GeneratorTest {
         ).setPackageInfo(
                 // 包配置
                 new PackageConfig()
-                        .setModuleName("")
-                        .setParent("com.mobinming.springboot")// 自定义包路径
+                        .setModuleName("springboot")
+                        .setParent("com.mobinming")// 自定义包路径
                         .setController("controller")// 这里是控制器包名，默认 web
         ).setCfg(
                 // 注入自定义配置，可以在 VM 中使用 cfg.abc 设置的值

@@ -47,11 +47,29 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.48</version>
         </dependency>
-        <!--添加mybatis-plus依赖-->
+        <!-- mybatisPlus 核心库 -->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.3.1</version>
+        </dependency>
+        <!-- mybatisPlus 代码生成器 -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
             <version>3.3.1.tmp</version>
+        </dependency>
+        <!-- 引入阿里数据库连接池 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.6</version>
+        </dependency>
+        <!-- mybatisPlus Freemarker 模版引擎 -->
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.29</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -62,5 +80,28 @@
 
 #### 2、 编辑application.yml
 ```yaml
-
+# mybatis-plus相关配置
+mybatis-plus:
+  # 如果是放在src/main/java目录下 classpath:/com/yourpackage/*/mapper/*.xml
+  # 如果是放在resource目录 classpath:mapper/*.xml
+  mapper-locations: classpath:mapper/*.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.mobinming.springvoot.entity
+  global-config:
+    db-config:
+      # AUTO(0)数据库ID自增  NONE(1)该类型为未设置主键类型(将跟随全局)  INPUT(2)用户输入ID
+      id-type: INPUT
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    call-setters-on-nulls: true
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/springboot-demo-db?useUnicode=true&characterEncoding=UTF-8
+    driver-class-name: com.mysql.jdbc.Driver #直接打mysql会有提示
+    type: com.alibaba.druid.pool.DruidDataSource
 ```
